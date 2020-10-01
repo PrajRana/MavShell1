@@ -76,6 +76,27 @@ int main()
         }
       printf("cmd value inside: %s\n",cmd_str);
     }
+    if(token[0][0]=='!')
+    {
+      printf("%c\n",word[0]);
+    	  char delim =word[0];
+    	 // printf("delim:%c\n",delim);
+    	char *c=strtok(word,&delim);
+    	// printf("length:%lu\n",strlen(word));
+    	 printf("c:%s\n",c);
+
+      int a= atoi(&token[0][1]);
+      printf("a :%d\n",a);
+      if(a>15)
+      {
+        printf("Command not in history\n");
+      }
+      else
+      {
+      //  history[a]//do we call fork agaain or do we run it in child pid?
+      }
+
+    }
 
     // we are going to move the working_str pointer so
     // keep track of its original value so we can deallocate
@@ -204,21 +225,6 @@ int main()
           }
 
         }
-      }
-
-    }
-    else if(token[0][0]=='!')
-    {
-      printf("value with !: %c\n",token[0][1]);
-      int a= atoi(&token[0][1]);
-      printf("a :%d\n",a);
-      if(a>15)
-      {
-        printf("Command not in history\n");
-      }
-      else
-      {
-      //  history[a]//do we call fork agaain or do we run it in child pid?
       }
 
     }
