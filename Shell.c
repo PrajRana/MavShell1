@@ -51,24 +51,20 @@ int main()
 
      if(cmd_str[0]=='!')
      {
-       //printf("%c\n",cmd_str[0]);
-     	 // char delim =cmd_str[0];
-     	 // printf("delim:%c\n",delim);
      	char *c=strtok(&cmd_str[1],"\n");
-     	// printf("length:%lu\n",strlen(word));
-     	 printf("inputs after !: %s\n",c);
+     	printf("inputs after !: %s\n",c);
 
-       int a= atoi(c);
-       printf("converted to int :%d\n",a);
-       if(a>hist_index)
-       {
-         printf("Command not in history\n");
-       }
-       else
-       {
-         strcpy(cmd_str,history[a]);
-         printf("history: %s\n",cmd_str);
-       }
+      int a= atoi(c);
+      printf("converted to int :%d\n",a);
+      if(a>hist_index)
+      {
+        printf("Command not in history\n");
+      }
+      else
+      {
+        strcpy(cmd_str,history[a]);
+        printf("history: %s\n",cmd_str);
+      }
 
      }
 
@@ -83,7 +79,7 @@ int main()
 
     char *working_str  = strdup( cmd_str );
 
-  //  printf("cmd: %s\n",cmd_str);
+
     //saves user input here
     //check for first character on input and if exit or quit don't add on array
     if((cmd_str[0]!= '\n') && (cmd_str[0]!='e') && (cmd_str[0]!='q') &&(cmd_str[0]!='!'))
