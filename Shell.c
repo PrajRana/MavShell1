@@ -51,7 +51,11 @@ int main()
 
      if(cmd_str[0]=='!')
      {
-       char *c=strtok(&cmd_str[1],"\n");
+       //printf("%c\n",cmd_str[0]);
+     	 // char delim =cmd_str[0];
+     	 // printf("delim:%c\n",delim);
+     	char *c=strtok(&cmd_str[1],"\n");
+     	// printf("length:%lu\n",strlen(word));
      	 printf("inputs after !: %s\n",c);
 
        int a= atoi(c);
@@ -119,9 +123,6 @@ int main()
         token_count++;
     }
 
-
-
-  //  printf("token:%c\n",token[0][0]);
        //exit if quit or exit
       //if(strcmp(token[token_count-token_count],"exit")==0 || strcmp(token[token_count-token_count],"quit")==0)
       if(strcmp(token[0],"exit")==0 || strcmp(token[0],"quit")==0)
@@ -137,27 +138,7 @@ int main()
         printf("cd called\n");
         chdir(token[1]);
 
-
       }
-      //else if(token[0][0]=='!')
-      // else if(strcmp(token[0],"history")==0)
-      // {
-      //   int i;
-      //    if(history_index!=0)//means its not full
-      //    {
-      //      for(i=0; i<;i++)
-      //      {
-      //        printf()
-      //      }
-      //    }
-      //   else //its full
-      //   {
-      //
-      //
-      //   }
-        //  printf("token number:%c\n",token[0][1]);
-        // // printf("view history\n");
-      //}
       else if(strcmp(token[0],"showpids")==0)
       {
         int current =0;
