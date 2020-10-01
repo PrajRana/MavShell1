@@ -49,6 +49,25 @@ int main()
       continue;
      }
 
+     if(cmd_str[0]=='!')
+     {
+     	char *c=strtok(&cmd_str[1],"\n");
+     	printf("inputs after !: %s\n",c);
+
+      int a= atoi(c);
+      printf("converted to int :%d\n",a);
+      if(a>hist_index)
+      {
+        printf("Command not in history\n");
+      }
+      else
+      {
+        strcpy(cmd_str,history[a]);
+        printf("history: %s\n",cmd_str);
+      }
+
+     }
+
     /* Parse input */
     char *token[MAX_NUM_ARGUMENTS];
 
@@ -60,10 +79,10 @@ int main()
 
     char *working_str  = strdup( cmd_str );
 
-  //  printf("cmd: %s\n",cmd_str);
+
     //saves user input here
     //check for first character on input and if exit or quit don't add on array
-    if((cmd_str[0]!= '\n') && (cmd_str[0]!='e') && (cmd_str[0]!='q'))
+    if((cmd_str[0]!= '\n') && (cmd_str[0]!='e') && (cmd_str[0]!='q') &&(cmd_str[0]!='!'))
     {
         printf("here\n");
         history[hist_index] = malloc(strlen(cmd_str));
@@ -75,27 +94,6 @@ int main()
           hist_index=0;
         }
       printf("cmd value inside: %s\n",cmd_str);
-    }
-    if(token[0][0]=='!')
-    {
-      printf("%c\n",word[0]);
-    	  char delim =word[0];
-    	 // printf("delim:%c\n",delim);
-    	char *c=strtok(word,&delim);
-    	// printf("length:%lu\n",strlen(word));
-    	 printf("c:%s\n",c);
-
-      int a= atoi(&token[0][1]);
-      printf("a :%d\n",a);
-      if(a>15)
-      {
-        printf("Command not in history\n");
-      }
-      else
-      {
-      //  history[a]//do we call fork agaain or do we run it in child pid?
-      }
-
     }
 
     // we are going to move the working_str pointer so
@@ -117,8 +115,6 @@ int main()
         token_count++;
     }
 
-
-  //  printf("token:%c\n",token[0][0]);
        //exit if quit or exit
       //if(strcmp(token[token_count-token_count],"exit")==0 || strcmp(token[token_count-token_count],"quit")==0)
       if(strcmp(token[0],"exit")==0 || strcmp(token[0],"quit")==0)
@@ -134,27 +130,7 @@ int main()
         printf("cd called\n");
         chdir(token[1]);
 
-
       }
-      //else if(token[0][0]=='!')
-      // else if(strcmp(token[0],"history")==0)
-      // {
-      //   int i;
-      //    if(history_index!=0)//means its not full
-      //    {
-      //      for(i=0; i<;i++)
-      //      {
-      //        printf()
-      //      }
-      //    }
-      //   else //its full
-      //   {
-      //
-      //
-      //   }
-        //  printf("token number:%c\n",token[0][1]);
-        // // printf("view history\n");
-      //}
       else if(strcmp(token[0],"showpids")==0)
       {
         int current =0;
@@ -227,8 +203,7 @@ int main()
         }
       }
 
-    }
-      //if not quit
+    }  //if not quit
       else
       {
         pid_t pid =fork();
@@ -245,18 +220,6 @@ int main()
            {
              printf("success\n");
            }
-           //mkdir is called by exec no need to add code
-           //when I had this mkdir it was causing this error
-          // int hold = mkdir(token[1],0700);//should this be called before exec or after exec? And after I make directory
-           // when I do ls it says failure, is it because we are not making a new file so it is not being called
-           // if(hold == 0)
-           // {
-           //   printf("succesful\n");
-           // }
-           // else if(hold == -1)
-           // {
-           //   printf("failure\n");
-           // }
          }
          else
          {
