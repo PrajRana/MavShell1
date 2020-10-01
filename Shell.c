@@ -96,10 +96,6 @@ int main()
       printf("cmd value inside: %s\n",cmd_str);
     }
 
-
-
-
-
     // we are going to move the working_str pointer so
     // keep track of its original value so we can deallocate
     // the correct amount at the end
