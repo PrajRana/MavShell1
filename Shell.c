@@ -217,7 +217,7 @@ int main()
       }
 
     }
-    //last option 
+    //last option
     else
       {
         pid_t pid =fork();
