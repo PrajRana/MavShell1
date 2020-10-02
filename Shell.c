@@ -84,12 +84,12 @@ int main()
 
      int a= atoi(c);
      printf("converted to int :%d\n",a);
-     if(a > hist_index  && a<15) //prevents from segfaulting if user types hisgher
+     if(a > hist_index  && a < 15) //prevents from segfaulting if user input is greate than index
      {
        printf("out of bounds\n");
        continue;
       }
-     else if(a > 15 || a <0) //handles input higer than 15
+     else if(a > 15 || a < 0) //handles input higer than 15, and less than lowest index
      {
        printf("index: %d\n",hist_index);
        printf("Command not in history\n");
