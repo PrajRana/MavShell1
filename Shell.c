@@ -163,7 +163,7 @@ int main()
             printf("Pids %d %d\n",j,pid_array[j]);
           }
         }
-        else //if array is full
+        else //if array has 15 items
         {
           current = index;
           for (k =0; k<15;k++)
@@ -218,9 +218,9 @@ int main()
         pid_t pid =fork();
         if(pid == 0)
          {
-          int ret = execvp(token[0],&token[0]);
+          int val = execvp(token[0],&token[0]);
 
-          if(ret== -1)
+          if(val== -1)
            {
              printf("%s: command not found\n",token[0]);
              exit(0);
@@ -232,7 +232,7 @@ int main()
          }
          else
          {
-           //store pid values
+           //stores non zero pid values
            pid_array[index++] = pid;
            if(index>14)
            {
