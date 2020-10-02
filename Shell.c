@@ -182,6 +182,8 @@ int main()
       int counter=0;
       int i,j,k,l;
       printf("asking to view history\n");
+
+      //counts total number of elements in an array
       for(i=0;i<15;i++)
       {
         if(history[i]!=0)
@@ -189,6 +191,7 @@ int main()
           counter++;
         }
       }
+      //if less than 15 number of items
       if(counter<15)
       {
         for(j=0; j<counter;j++)
@@ -197,6 +200,7 @@ int main()
         }
 
       }
+      //if more than 15 elements
       else
       {
         k=hist_index;
@@ -212,7 +216,8 @@ int main()
         }
       }
 
-    }  //if not quit
+    }
+    //last option
     else
       {
         pid_t pid =fork();
