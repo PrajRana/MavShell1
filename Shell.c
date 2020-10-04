@@ -20,7 +20,6 @@
 
 int main()
 {
-
   char * cmd_str = (char*) malloc( MAX_COMMAND_SIZE );
   char ** history=  malloc(sizeof(char *) * 15);
   int *pid_array = (int*) malloc(sizeof(int) * 15);
