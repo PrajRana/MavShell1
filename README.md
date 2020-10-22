@@ -1,7 +1,7 @@
 
 # MavShell
 
-Mini version of shell written in C which uses system calls
+Mini version of shell written in C 
 
 ## Features
 - Uses system calls such as fork(),wait(),exec()
