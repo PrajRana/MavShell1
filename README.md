@@ -9,3 +9,8 @@ Mini version of shell written in C
 - !n runs the n^th command from command history
 - Suppports commands such as cd, mkdir
 
+## Installation
+- git clone https://github.com/PrajRana/MavShell1.git
+- To run gcc Shell.c -o Shell
+- ./Shell
+
