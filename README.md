@@ -11,6 +11,6 @@ Mini version of shell written in C
 
 ## Installation
 - git clone https://github.com/PrajRana/MavShell1.git
-- To run gcc Shell.c -o Shell
-- ./Shell
+- to run gcc Shell.c -o Shell
+
 
